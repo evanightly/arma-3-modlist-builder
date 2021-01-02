@@ -7,13 +7,13 @@ Requirements
 1. NodeJs : https://nodejs.org/
 2. Windows OS
 
-STEPS
+Steps
 -------------
 1. Edit the config file depending on your arma 3 folder (details below)
 2. Run build.bat
 3. Profit!
 
-CONFIGURATION
+Configuration
 -------------
  
  * Configuration file located in current file (config.json)
