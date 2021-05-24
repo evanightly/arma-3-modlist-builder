@@ -1,0 +1,29 @@
+@font-face {
+  font-family: AMDRTG;
+  src: url("../fonts/AMDRTG.ttf");
+}
+
+* {
+  user-select: none;
+  font-size: 13px;
+}
+
+.main {
+  background: linear-gradient(
+      to bottom right,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("../images/Arma3V2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+button:hover i {
+  font-size: 1.2rem;
+}
+
+button i {
+  transition: all 0.2s;
+}

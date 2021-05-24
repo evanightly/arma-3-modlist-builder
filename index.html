@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+    <title>Arma 3 Modlist Builder</title>
+  </head>
+  <body>
+    <div class="main vh-100 overflow-hidden">
+      <ul class="nav text-light h-25">
+        <h3 class="p-1 ms-2">Arma 3 Modlist Builder</h3>
+        <li class="nav-item ms-auto">
+          <button class="btn btn-transparent text-light" id="minimizeButton">
+            <i class="bi bi-dash-lg"></i>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-transparent text-light" id="closeButton">
+            <i class="bi bi-door-open"></i>
+          </button>
+        </li>
+      </ul>
+      <div class="container-fluid h-75">
+        <div class="row h-100">
+          <div class="col-md-12 d-flex align-items-end mb-3">
+            <button class="btn btn-outline-light p-3 px-5" id="buildButton">Build</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
