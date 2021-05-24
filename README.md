@@ -10,7 +10,7 @@ Requirements
 Steps
 -------------
 1. Edit the config file depending on your arma 3 folder (details below)
-2. Run build.bat
+2. Run Arma 3 Modlist Builder.exe
 3. Profit!
 
 Configuration
