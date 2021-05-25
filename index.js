@@ -8,7 +8,7 @@ const createWindow = () => {
     center: true,
     fullscreen: false,
     frame: false,
-    icon: "./assets/images/taskbar.png",
+    icon: path.join(__dirname, "assets/images/taskbar.png"),
     webPreferences: { preload: path.join(__dirname, "preload.js") },
   });
   win.loadFile("index.html");
