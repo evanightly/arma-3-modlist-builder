@@ -1,5 +1,5 @@
 {
-  "modsPathFromCurrentFolder": "../",
+  "modsPathFromCurrentFolder": "D:/Software/Steam/steamapps/common/Arma 3 Server/mods",
   "modsPathFromArmaFolder": "mods/",
   "arma3FullPath": "",
   "parameters": "-names -port=2302 -profiles=profiles -config=CONFIG_server.cfg -world=empty",

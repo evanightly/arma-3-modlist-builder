@@ -6,36 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
       href="./node_modules/bootstrap-icons/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="./assets/styles/style.css" />
     <title>Arma 3 Modlist Builder</title>
   </head>
   <body>
-    <div class="main vh-100 overflow-hidden">
-      <ul class="nav text-light h-25">
-        <h3 class="p-1 ms-2">Arma 3 Modlist Builder</h3>
-        <li class="nav-item ms-auto">
-          <button class="btn btn-transparent text-light" id="minimizeButton">
-            <i class="bi bi-dash-lg"></i>
+    <div class="main">
+      <ul class="header list text-light">
+        <h3 class="header__title">Arma 3 Modlist Builder</h3>
+        <!-- <li class="header__item ms-auto">
+          <button class="btn btn--transparent" id="minimizeButton">
+            <i class="bi bi-dash-lg text-light"></i>
           </button>
-        </li>
-        <li class="nav-item">
-          <button class="btn btn-transparent text-light" id="closeButton">
-            <i class="bi bi-door-open"></i>
+        </li> -->
+        <li class="header__item ms-auto">
+          <button class="btn btn--transparent" id="closeButton">
+            <i class="bi bi-door-open text-light"></i>
           </button>
         </li>
       </ul>
-      <div class="container-fluid h-75">
-        <div class="row h-100">
-          <div class="col-md-12 d-flex align-items-end mb-3">
-            <button class="btn btn-outline-light p-3 px-5" id="buildButton">Build</button>
-          </div>
-        </div>
+      <div class="content">
+        <table class="file-list">
+          <thead class="file-list__header">
+            <tr>
+              <th>#</th>
+              <th class="text-left">Mods</th>
+            </tr>
+          </thead>
+          <tbody class="file-item" id="file-item"></tbody>
+        </table>
+      </div>
+      <div class="build-button">
+        <button class="btn btn--large btn--light" id="buildButton">
+          Build
+        </button>
       </div>
     </div>
   </body>
