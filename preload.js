@@ -5,16 +5,68 @@ const {
   parameters,
   serverExecFileName,
 } = require("./config.json");
-const fs = require("fs");
-let files = fs.readdirSync(modsPathFromCurrentFolder);
 
+const fs = require("fs");
+const { dialog } = require("electron").remote;
+
+let files = fs.readdirSync(modsPathFromCurrentFolder);
 // Get files name starts with '@'
 files = files.filter((item) => {
   return item.startsWith("@");
 });
 
 window.addEventListener("DOMContentLoaded", () => {
-  // Header Logic
+  // Inject JSON Settings
+  document.getElementById("modPathEntry").textContent =
+    modsPathFromCurrentFolder;
+  document.querySelector("input#modPathFromArma").value =
+    modsPathFromArmaFolder;
+  document.querySelector("input#parameters").value = parameters;
+  document.querySelector("input#filename").value = serverExecFileName;
+
+  // Settings
+  let initialSettings = require("./config.json");
+
+  document.querySelectorAll("input").forEach((input) => {
+    input.addEventListener("change", (e) => {
+      initialSettings = { ...initialSettings, [e.target.name]: e.target.value };
+      console.log(initialSettings);
+    });
+  });
+
+  document.getElementById("settings").addEventListener("click", () => {
+    document.querySelector(".settings").style.display = "flex";
+  });
+
+  document.getElementById("modPath").addEventListener("click", () => {
+    dialog
+      .showOpenDialog({
+        title: "Select a folder",
+        properties: ["openDirectory"],
+      })
+      .then((result) => {
+        if (result > 0) {
+          const finalResult = result.filePaths[0].replace(/\\/g, "/");
+          initialSettings = {
+            ...initialSettings,
+            modsPathFromCurrentFolder: finalResult,
+          };
+        }
+      });
+  });
+
+  document.querySelector("#closeSettings").addEventListener("click", () => {
+    document.querySelector(".settings").style.display = "none";
+  });
+
+  document.getElementById("confirmSettings").addEventListener("click", () => {
+    fs.writeFile("config.json", JSON.stringify(initialSettings), (failed) => {
+      if (failed) console.error(failed);
+    });
+    document.querySelector(".settings").style.display = "none";
+  });
+
+  // Header
   document.getElementById("closeButton").addEventListener("click", () => {
     window.close();
   });
@@ -62,7 +114,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
     fs.writeFile(serverExecFileName + ".bat", BATFILEFORMAT, (err) => {
       if (err) throw err;
-      console.log("Operation Completed!");
+      dialog.showMessageBox({
+        message: "Operation Completed!",
+        title: "Arma 3 Modlist Builder",
+        icon: __dirname + "/assets/images/icon.ico",
+      });
     });
   });
 

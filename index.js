@@ -12,7 +12,7 @@ const createWindow = () => {
     movable: true,
     resizable: false,
     icon: path.join(__dirname, "/assets/images/taskbar.png"),
-    webPreferences: { preload: path.join(__dirname, "preload.js") },
+    webPreferences: { preload: path.join(__dirname, "preload.js"), enableRemoteModule:true },
   });
   win.loadFile("index.html");
 };

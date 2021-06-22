@@ -13,6 +13,37 @@
   </head>
   <body>
     <div class="main">
+      <div class="settings">
+        <h2>Settings</h2>
+        <div class="settings__close-button-container">
+          <button class="btn btn--transparent" id="closeSettings">
+            <span><i class="bi bi-x text-light"></i></span>
+          </button>
+        </div>
+        <label for="modPath">Mods Directory</label>
+        <div class="settings__button-container">
+          <button class="settings__button" id="modPath">
+            Choose Mod Folder
+          </button>
+          <label for="modPath" id="modPathEntry"></label>
+        </div>
+        <label for="modPathFromArma"
+          >Mods Directory From Arma Server <span>ex: Mods/</span></label
+        >
+        <input type="text" id="modPathFromArma" name="modsPathFromArmaFolder" />
+        <label for="parameters">Parameters</label>
+        <input type="text" id="parameters" name="parameters" />
+        <label for="filename"
+          >File name <span>(appeared after build)</span>
+        </label>
+        <input type="text" id="filename" name="serverExecFileName" />
+        <button
+          class="settings__confirm-button btn btn--light"
+          id="confirmSettings"
+        >
+          Confirm
+        </button>
+      </div>
       <ul class="header list text-light">
         <h3 class="header__title">Arma 3 Modlist Builder</h3>
         <!-- <li class="header__item ms-auto">
@@ -40,6 +71,9 @@
       <div class="build-button">
         <button class="btn btn--large btn--light" id="buildButton">
           Build
+        </button>
+        <button class="btn btn--transparent" id="settings">
+          <i class="bi bi-gear text-light"></i>
         </button>
       </div>
     </div>
