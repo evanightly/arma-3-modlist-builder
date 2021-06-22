@@ -45,7 +45,7 @@ window.addEventListener("DOMContentLoaded", () => {
         properties: ["openDirectory"],
       })
       .then((result) => {
-        if (result > 0) {
+        if (result.canceled !== true) {
           const finalResult = result.filePaths[0].replace(/\\/g, "/");
           initialSettings = {
             ...initialSettings,
@@ -60,10 +60,16 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   document.getElementById("confirmSettings").addEventListener("click", () => {
-    fs.writeFile("config.json", JSON.stringify(initialSettings), (failed) => {
-      if (failed) console.error(failed);
-    });
+    // Settings For Production
+    fs.writeFile(
+      __dirname + "/config.json",
+      JSON.stringify(initialSettings),
+      (failed) => {
+        if (failed) console.error(failed);
+      }
+    );
     document.querySelector(".settings").style.display = "none";
+    window.location.reload();
   });
 
   // Header
