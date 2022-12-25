@@ -1,6 +1,6 @@
 Arma 3 Modlist builder
 -------------
-this script is mainly used to include mods to arma 3 server config
+This script is mainly used to include mods to arma 3 server config
 
 [Download here](https://github.com/evanightly/arma-3-modlist-builder/releases/download/1.1.1/modlist-builder-win32-x64.zip)
 
