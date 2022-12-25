@@ -1,0 +1,211 @@
+@font-face {
+  font-family: AMDRTG;
+  src: url("../fonts/AMDRTG.ttf");
+}
+
+html {
+  font-family: sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  font-size: 13px;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(
+      to bottom right,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("../images/Arma3V2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.header {
+  height: 15vh;
+  padding: 1rem;
+  display: flex;
+}
+
+.list {
+  list-style: none;
+}
+
+.header__item:not(:last-of-type) {
+  margin-right: 5px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 15rem;
+  overflow: auto;
+  padding: 8px;
+  margin-right: 8px;
+}
+
+.settings {
+  display: none;
+  position: absolute;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  flex-direction: column;
+  color: #fff;
+}
+
+.settings h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.settings__close-button-container {
+  top: 10px;
+  right: 15px;
+  position: absolute;
+}
+
+.settings__close-button-container button {
+  height: 20px;
+  width: 20px;
+  font-size: 1rem;
+  position: relative;
+  transition: all 0.5s ease-in;
+}
+
+.settings__close-button-container button i {
+  position: absolute;
+  top: 50;
+  left: 50;
+  transform: translate(-50%, -50%);
+}
+
+.settings > *:not(:last-child) {
+  margin-top: 5px;
+}
+
+.settings label span {
+  font-size: 10px;
+}
+
+.settings > :last-child {
+  align-self: flex-end;
+  margin-top: 30px;
+  padding: 10px;
+  width: 25%;
+}
+
+.file-list {
+  display: table;
+  width: 100%;
+  height: 10px;
+  background-color: rgba(19, 18, 18, 0.63);
+  box-shadow: 0px -5px rgba(19, 18, 18, 0.63);
+  color: #fff;
+}
+
+.file-item {
+  height: 50vh;
+}
+
+.build-button {
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.build-button p {
+  margin-left: auto;
+  padding-right: 20px;
+}
+
+/* Components  */
+
+.btn {
+  background-color: transparent;
+  border-radius: 2px;
+  padding: 2px;
+  border: none;
+}
+
+.btn--large {
+  padding: 15px 30px;
+  font-size: larger;
+}
+
+.btn--light {
+  border: 1px solid #fff;
+  color: #fff;
+  transition: all 0.5s;
+}
+
+.btn--light:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.btn--transparent {
+  color: transparent;
+}
+
+button:hover i {
+  font-size: 1.4rem;
+}
+
+button i {
+  transition: all 0.2s;
+}
+
+/* Utilities */
+
+.text-light {
+  color: #fff;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.ms-auto {
+  margin-left: auto;
+}
+
+/* Other */
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  margin: 5px 0 0 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(204, 204, 204);
+}

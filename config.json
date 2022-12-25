@@ -1,0 +1,7 @@
+{
+  "modsPathFromCurrentFolder": "D:/Software/Steam/steamapps/common/Arma 3 Server/mods",
+  "modsPathFromArmaFolder": "mods/",
+  "arma3FullPath": "",
+  "parameters": "-names -config=server.cfg",
+  "serverExecFileName": "Run Arma Server"
+}
