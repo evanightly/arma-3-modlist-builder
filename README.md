@@ -2,7 +2,9 @@ Arma 3 Modlist builder
 -------------
 this script is mainly used to include mods to arma 3 server config
 
-Requirements
+[Download here](https://github.com/evanightly/arma-3-modlist-builder/releases/download/1.1.1/modlist-builder-win32-x64.zip)
+
+Dev Requirements
 -------------
 1. NodeJs : https://nodejs.org/
 2. Windows OS
